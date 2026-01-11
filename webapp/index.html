@@ -1,1 +1,91 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Обмінники Дарницького району</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="loading">
+        <div class="loader"></div>
+        <p>Завантаження карти...</p>
+    </div>
+    
+    <div id="map"></div>
+    
+    <div id="info-panel" class="hidden">
+        <div class="info-header">
+            <h2 id="info-title"></h2>
+            <button id="close-info">&times;</button>
+        </div>
+        <div class="info-content">
+            <div class="info-row">
+                <span class="icon">📍</span>
+                <span id="info-address"></span>
+            </div>
+            <div class="info-row">
+                <span class="icon">📌</span>
+                <span id="info-district"></span>
+            </div>
+            <div class="info-row" id="phone-row" style="display: none;">
+                <span class="icon">📞</span>
+                <a href="#" id="info-phone"></a>
+            </div>
+            
+            <div class="rates-container">
+                <h3>💱 Курси валют</h3>
+                <div class="rate-card" id="usd-rate" style="display: none;">
+                    <div class="rate-header">
+                        <span class="currency-icon">💵</span>
+                        <span class="currency-name">USD</span>
+                    </div>
+                    <div class="rate-values">
+                        <div class="rate-item">
+                            <span class="rate-label">Купівля</span>
+                            <span class="rate-value" id="usd-buy">-</span>
+                        </div>
+                        <div class="rate-item">
+                            <span class="rate-label">Продаж</span>
+                            <span class="rate-value" id="usd-sell">-</span>
+                        </div>
+                    </div>
+                    <div class="rate-updated" id="usd-updated"></div>
+                </div>
+                
+                <div class="rate-card" id="eur-rate" style="display: none;">
+                    <div class="rate-header">
+                        <span class="currency-icon">💶</span>
+                        <span class="currency-name">EUR</span>
+                    </div>
+                    <div class="rate-values">
+                        <div class="rate-item">
+                            <span class="rate-label">Купівля</span>
+                            <span class="rate-value" id="eur-buy">-</span>
+                        </div>
+                        <div class="rate-item">
+                            <span class="rate-label">Продаж</span>
+                            <span class="rate-value" id="eur-sell">-</span>
+                        </div>
+                    </div>
+                    <div class="rate-updated" id="eur-updated"></div>
+                </div>
+                
+                <div class="no-rates" id="no-rates">
+                    <p>⚠️ Курси ще не оновлені</p>
+                </div>
+            </div>
+            
+            <button id="navigate-btn" class="navigate-btn">
+                🧭 Прокласти маршрут
+            </button>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script src="map.js"></script>
+</body>
+</html>
 
