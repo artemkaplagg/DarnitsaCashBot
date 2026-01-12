@@ -15,5 +15,5 @@ UPDATE_INTERVAL = 300  # 5 минут
 
 # Путь к данным
 DATA_DIR = 'data'
-WEBAPP_URL = os.getenv('WEBAPP_URL', 'https://your-app.netlify.app')
+WEBAPP_URL = os.getenv('WEBAPP_URL', 'https://darnitsacash.netlify.app')
 
